@@ -1,0 +1,42 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: service-order
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shop?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=true
+    username: root
+    password: zdh666666
+
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect  #控制JPA创建数据表的引擎
+    show-sql: true
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+    sentinel:
+      transport:
+        port: 9999  # 服务对控制台开放的端口，自己设定一个未使用的端口即可
+        dashboard: localhost:8080 #sentinel控制台地和端口
+logging:
+  level:
+    com.alibaba.nacos.client.naming: error  # 控制nacos客户端打印日志级别
+
+# 单独使用ribbon，配合RestTempalte使用
+#service-product: # 提供服务者的服务名
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# feign 中的ribbon策略配置
+ribbon:
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
