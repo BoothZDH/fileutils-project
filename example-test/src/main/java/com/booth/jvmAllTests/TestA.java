@@ -10,19 +10,12 @@ import lombok.NoArgsConstructor;
  * @Version:1.0
  */
 
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TestA {
 	String  name;
 
-	String   age;
+	Integer   age;
 
-
-
-	@Override
-	public String toString() {
-		return "TestA{" +
-				"name='" + name + '\'' +
-				", age='" + age + '\'' +
-				'}';
-	}
 }
