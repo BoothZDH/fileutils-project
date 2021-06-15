@@ -6,12 +6,12 @@ import org.springframework.boot.SpringApplication;
 import java.util.HashMap;
 
 /**
- * @ClassName: StringUtils
+ * @ClassName: StringUtilssss
  * @Description:TODO
  * @Version:1.0
  */
 @Slf4j
-public class StringUtils {
+public class StringUtilssss {
 
 	private static String bo = "booth_zhongdognhua";
 
